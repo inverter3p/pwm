@@ -5,6 +5,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import signal
 
+st.set_page_config(
+    page_title="3 Phase SPWM",
+    page_icon="🎚",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
 
 st.write(""" # Three Phase SPWM Inverter""")
 pwm = st.radio("Select PWM scheme",('SPWM','HI-SPWM'))
