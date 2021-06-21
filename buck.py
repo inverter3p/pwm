@@ -99,18 +99,18 @@ with col2:
     st.latex('\Delta I_{L} = \dfrac{V_{L}\\times T_{OFF}}{L_{buck}}')
 
 VL = pwm*(vin-vout)+(pwm-1)*vout
-vlplot = plt.figure(figsize=[7,3])
+vlplot = plt.figure(figsize=[7,2])
 plt.plot(time,VL,'darkblue',label='$V_{L}$')
 plt.text(0.02,max(VL)+2,'$V_{in}-V_{out}$')
 plt.text(0.02,min(VL)-5,'$-V_{out}$')
 plt.legend(frameon=False, loc='lower center', ncol=3)
-plt.axis([0,1,-vin,vin])
+plt.axis([0,1,-vout+10,vin])
 # plt.xlabel('Time (ms)')
 plt.yticks([0,-vout,(vin-vout)])
 plt.fill_between(time,VL,alpha=0.3,color='blue')
 
 delta_il = cumtrapz(VL/lbk,time,initial=0)
-ilplot = plt.figure(figsize=[7,3])
+ilplot = plt.figure(figsize=[7,2])
 iL = delta_il+iout-np.average(delta_il)
 plt.plot(time,iL,'darkblue',label='$I_{L}$')
 plt.plot(time,time/time*iout,'r')
