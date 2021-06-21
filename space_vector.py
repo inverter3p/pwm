@@ -149,7 +149,7 @@ Vec_xabc = [A[0]*abc[0],B[0]*abc[1],C[0]*abc[2]]
 Vec_yabc = [A[1]*abc[0],B[1]*abc[1],C[1]*abc[2]]
 Org = [[0]*np.size(Vec_xabc),[0]*np.size(Vec_yabc)]
 fig = plt.figure(figsize=[10,5])
-ax1 = fig.add_subplot(121)
+# ax1 = fig.add_subplot(121)
 plotvec(Org,Vec_xabc,Vec_yabc,121,'N')
 plt.title('Space Vector ABC')
 
