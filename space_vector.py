@@ -22,7 +22,7 @@ def checkii(xpos,ypos):
   return a
 
 def plotvec(org,vx,vy,pos,nol):
-  ax = fig.add_subplot(pos)
+  ax1 = fig.add_subplot(pos)
   org_x =  org[0]
   org_y =  org[1]
   if np.size(vx)<4:
@@ -48,7 +48,7 @@ def plotvec(org,vx,vy,pos,nol):
 
   plt.xlim(-1.5*amp, 1.5*amp)
   plt.ylim(-1.5*amp, 1.5*amp)
-  ax.set_aspect('equal', adjustable='box')  
+  ax1.set_aspect('equal', adjustable='box')  
   
   checkii(-1.43,1.3)
   return ax
@@ -149,7 +149,7 @@ Vec_xabc = [A[0]*abc[0],B[0]*abc[1],C[0]*abc[2]]
 Vec_yabc = [A[1]*abc[0],B[1]*abc[1],C[1]*abc[2]]
 Org = [[0]*np.size(Vec_xabc),[0]*np.size(Vec_yabc)]
 fig = plt.figure(figsize=[10,5])
-ax = fig.add_subplot(121)
+ax1 = fig.add_subplot(121)
 plotvec(Org,Vec_xabc,Vec_yabc,121,'N')
 plt.title('Space Vector ABC')
 
