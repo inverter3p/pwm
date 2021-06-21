@@ -103,8 +103,9 @@ vlplot = plt.figure(figsize=[7,2])
 plt.plot(time,VL,'darkblue',label='$V_{L}$')
 plt.text(0.02,max(VL)+2,'$V_{in}-V_{out}$')
 plt.text(0.02,min(VL)-5,'$-V_{out}$')
-plt.legend(frameon=False, loc='lower center', ncol=3)
-plt.axis([0,1,-vout-25,vin])
+plt.title('$V_{L}$')
+# plt.legend(frameon=False, loc='lower center', ncol=3)
+plt.axis([0,1,-vout-20,vin])
 # plt.xlabel('Time (ms)')
 plt.yticks([0,-vout,(vin-vout)])
 plt.fill_between(time,VL,alpha=0.3,color='blue')
@@ -117,6 +118,7 @@ plt.plot(time,time/time*iout,'r')
 plt.text(0.9,iout+0.2,'$I_{out}$',color='red')
 plt.legend(frameon=False, loc='lower center', ncol=3)
 plt.xlabel('Time (ms)')
+plt.axis([0,1,0,max(iL)+5])
 # plt.yticks([0,-vout,(vin-vout)])
 
 
@@ -125,11 +127,11 @@ mode =True
 if min(iL)<0:
     st.sidebar.error('Discontinous Mode!!!')
     mode = False
-    plt.axis([0,1,0,max(iL)])
+#     plt.axis([0,1,0,max(iL)+5])
 else:
     st.sidebar.info('Continuous Mode')
     mode = True
-    plt.axis([0,1,0,iout*2])
+#     plt.axis([0,1,0,max])
 
 st.write(vlplot)
 st.write(ilplot)
