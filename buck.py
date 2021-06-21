@@ -63,7 +63,7 @@ plt.text(1.02,duty,'M',color='darkblue')
 
 
 
-st.pyplot(plotpwm)
+st.write(plotpwm)
 
 
 
