@@ -186,9 +186,10 @@ with st.beta_expander('See ABC  Space Vector'):
 #########  Plot alpha beta Vectors  #############
 #################################################
 st.info('## Alpha Beta Reference Frame')
-st.latex('\\begin{bmatrix} F_{\\alpha} \\\ F_{\\beta} \\\ F_{0} \end{bmatrix} = \
-  C\\begin{bmatrix} 1 & -\\frac{1}{2} & -\\frac{1}{2} \\\ 0 & \\frac{\sqrt{3}}{2} & -\\frac{\sqrt{3}}{2} \\\ \
-   \\frac{1}{2} & \\frac{1}{2} & \\frac{1}{2}    \end{bmatrix} \\begin{bmatrix} F_{A} \\\ F_{B} \\\ F_{C} \end{bmatrix}  ')
+with st.beta_expander('Clarke\'s Transformation'):
+    st.latex('\\begin{bmatrix} F_{\\alpha} \\\ F_{\\beta} \\\ F_{0} \end{bmatrix} = \
+    C\\begin{bmatrix} 1 & -\\frac{1}{2} & -\\frac{1}{2} \\\ 0 & \\frac{\sqrt{3}}{2} & -\\frac{\sqrt{3}}{2} \\\ \
+    \\frac{1}{2} & \\frac{1}{2} & \\frac{1}{2}    \end{bmatrix} \\begin{bmatrix} F_{A} \\\ F_{B} \\\ F_{C} \end{bmatrix}  ')
 
 scaling=1.0
 sf = st.radio('Scaling Factor (C)', ('1','2/3','sqrt{2/3}'))
