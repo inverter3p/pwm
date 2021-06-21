@@ -118,7 +118,7 @@ plt.plot(time,time/time*iout,'r')
 plt.text(0.9,iout+0.2,'$I_{out}$',color='red')
 plt.legend(frameon=False, loc='lower center', ncol=3)
 plt.xlabel('Time (ms)')
-plt.axis([0,1,0,max(iL)+5])
+
 # plt.yticks([0,-vout,(vin-vout)])
 
 
@@ -127,11 +127,11 @@ mode =True
 if min(iL)<0:
     st.sidebar.error('Discontinous Mode!!!')
     mode = False
-#     plt.axis([0,1,0,max(iL)+5])
+    plt.axis([0,1,0,max(iL)+5])
 else:
     st.sidebar.info('Continuous Mode')
     mode = True
-#     plt.axis([0,1,0,max])
+    plt.axis([0,1,0,iout*2])
 
 st.write(vlplot)
 st.write(ilplot)
