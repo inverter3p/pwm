@@ -7,7 +7,7 @@ from scipy.integrate import cumtrapz
 
 st.set_page_config(
     page_title="PWM of Buck Converter",
-    page_icon=🎮",
+    page_icon="🎮",
     initial_sidebar_state="expanded",
 )
 
