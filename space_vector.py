@@ -199,15 +199,15 @@ else:
   scaling = np.sqrt(2/3)
 
 sin_ab= ABC2ab([sinA,sinB,sinC],1)
-ab = ABC2ab(abc,1)  ### ABC to alpha beta Tranformation 
+ab = ABC2ab(abc,scaling)  ### ABC to alpha beta Tranformation 
 ab_plot = plt.figure(figsize=[10,4])
 ax = ab_plot.add_subplot(111)
 
 
-plt.plot(wt2,scaling*sin_ab[0],'r',label='$\\alpha$')
-plt.plot(wt2,scaling*sin_ab[1],'b',label='$\\beta$')
-plt.fill_between(wt2,scaling*sin_ab[0],alpha=0.1,color='red')
-plt.fill_between(wt2,scaling*sin_ab[1],alpha=0.1,color='blue')
+plt.plot(wt2,sin_ab[0],'r',label='$\\alpha$')
+plt.plot(wt2,sin_ab[1],'b',label='$\\beta$')
+plt.fill_between(wt2,sin_ab[0],alpha=0.1,color='red')
+plt.fill_between(wt2,sin_ab[1],alpha=0.1,color='blue')
 plt.xlim(0, 2*pii)
 plt.ylim(-amp*1.8, amp*1.8)
 plt.title('Equivalent $\\alpha \\beta$-Reference Frame Waveforms')
@@ -217,8 +217,8 @@ grid_x_ticks_major = np.arange(0, 2*pii+pii/3, pii/3 )
 ax.set_xticks(grid_x_ticks_major)
 ax.set_xticklabels(['0', '$\pi /3$', '$2\pi /3$', '$\pi$', '$4\pi /3$','$5\pi /3$','$2\pi$'])
 # ax.grid(which='major', linestyle='--')
-plt.plot(arrow_loc,scaling*ab[0],'r+',markersize= 15)
-plt.plot(arrow_loc,scaling*ab[1],'b+',markersize= 15)
+plt.plot(arrow_loc,ab[0],'r+',markersize= 15)
+plt.plot(arrow_loc,ab[1],'b+',markersize= 15)
 
 
 plt.axvline(i*2*pii/(step-1), -15, 15,color='grey')
@@ -227,9 +227,9 @@ checkii(i*2*pii/(step-1)+0.1,1.3)
 ######################################################
 fig = plt.figure(figsize=[10,5])
 ax = fig.add_subplot(121)
-ab = ABC2ab(abc,1)  ### ABC to alpha beta Tranformation 
-Vec_xab = [scaling*ab[0],0]
-Vec_yab = [0,ab[1]*scaling]
+ab = ABC2ab(abc,scaling)  ### ABC to alpha beta Tranformation 
+Vec_xab = [ab[0],0]
+Vec_yab = [0,ab[1]]
 plotvec([[0,0],[0,0]],Vec_xab,Vec_yab,121,'N')
 plt.title('Space Vector $\\alpha \\beta$')
 
@@ -249,13 +249,13 @@ plt.title('Sum of Space Vector $\\alpha \\beta$')
 
 st.write(ab_plot)
 
-vec_alpha = '\\vec{\\alpha} = '+ str(round(scaling*ab[0],3))+'\\angle{0^\circ}'
-vec_beta = '\\vec{\\beta} = '+ str(round(scaling*ab[1],3))+'\\angle{90^\circ}'
+vec_alpha = '\\vec{\\alpha} = '+ str(round(ab[0],3))+'\\angle{0^\circ}'
+vec_beta = '\\vec{\\beta} = '+ str(round(ab[1],3))+'\\angle{90^\circ}'
 
 amp_alpha = max(sin_ab[0])
 amp_beta = max(sin_ab[1])
-alpha = '\\alpha(t) = '+str(round(scaling*amp_alpha,3))+'\sin(\omega t)'
-beta = '\\beta(t)= '+ str(round(scaling*amp_beta,3))+'\sin(\omega t + \pi/2)'
+alpha = '\\alpha(t) = '+str(round(amp_alpha,3))+'\sin(\omega t)'
+beta = '\\beta(t)= '+ str(round(amp_beta,3))+'\sin(\omega t + \pi/2)'
 
 
 st.sidebar.info('** Clarke Transformation **')
