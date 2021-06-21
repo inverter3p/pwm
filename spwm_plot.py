@@ -1,6 +1,3 @@
-# import yfinance as yf
-# import pandas as pd
-# import seaborn as sns
 import streamlit as st
 from PIL import Image
 import requests
