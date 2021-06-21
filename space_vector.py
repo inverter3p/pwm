@@ -56,8 +56,8 @@ def plotvec(org,vx,vy,pos,nol):
 
 
 def ABC2ab(abc,scaling):
-  alpha = scaling*abc[0]*1-abc[1]*0.5-abc[2]*0.5
-  beta = scaling*abc[0]*0+abc[1]*0.866-abc[2]*0.866
+  alpha = scaling*(abc[0]*1-abc[1]*0.5-abc[2]*0.5)
+  beta = scaling*(abc[0]*0+abc[1]*0.866-abc[2]*0.866)
   return [alpha,beta]
 
 ##########################๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒#######################
