@@ -226,7 +226,6 @@ checkii(i*2*pii/(step-1)+0.1,1.3)
 
 ######################################################
 fig = plt.figure(figsize=[10,5])
-ax = fig.add_subplot(121)
 ab = ABC2ab(abc,scaling)  ### ABC to alpha beta Tranformation 
 Vec_xab = [ab[0],0]
 Vec_yab = [0,ab[1]]
