@@ -139,7 +139,7 @@ if mode:
         st.latex('\dfrac{V_{out}}{V_{in}} = \dfrac{T_{ON}}{T_{ON}+T_{OFF}} = D')
 
     with col2:
-        st.write('** Average value of **'.'$I_{L}$')
+        st.write('** Average value of **','$I_{L}$')
         iltext = 'I_{L,avg} = I_{out}=\:'+str(iout) +'\:A'
         st.latex(iltext)
         iripple = max(iL) - min(iL)
