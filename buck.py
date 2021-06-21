@@ -5,6 +5,11 @@ import matplotlib.pyplot as plt
 from scipy import signal
 from scipy.integrate import cumtrapz
 
+st.set_page_config(
+    page_title="PWM of Buck Converter",
+    page_icon=🎮",
+    initial_sidebar_state="expanded",
+)
 
 st.write(""" # Buck Converter """)
 image = Image.open('buck.png')
