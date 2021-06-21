@@ -59,11 +59,11 @@ plotpwm = plt.figure(figsize=[7,2])
 plt.plot(time,tri_FB,'gray')
 plt.plot(time,dd,'darkblue')
 plt.text(1.02,duty,'M',color='darkblue')
-# plt.xlabel('Time ($\mu$s)')
 
 
 
-st.write(plotpwm)
+
+st.pyplot(plotpwm)
 
 
 
@@ -73,8 +73,8 @@ plt.plot(time,pwm,'darkblue')
 plt.xlabel('Time (ms)')
 plt.yticks([0,0.5,1.00])
 
+st.pyplot(plotduty)
 
-st.write(plotduty)
 col1,col2 = st.beta_columns(2)
 Ton = duty/fsw
 ton = 'T_{ON} = \:'+str(round(Ton,3))+'\:\\text{ms}'
