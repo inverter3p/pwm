@@ -70,7 +70,8 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-st.sidebar.info('## Set amplitude')
+i = st.sidebar.slider('Step',0,12,step=1) 
+st.sidebar.info('** Set amplitude**')
  
 
 ampA = st.sidebar.slider('Phase A Amplitude',1,10,1,step=1)
@@ -94,7 +95,7 @@ st.sidebar.latex(c)
 #########################################
 #   Plot sine wave ABC
 #########################################
-i = st.slider('Step',0,12,step=1) 
+
 
 wt2 = np.linspace(0,2*pii,101)
 sinA = ampA*np.sin(wt2)
