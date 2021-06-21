@@ -8,7 +8,6 @@ from scipy import signal
 st.set_page_config(
     page_title="3 Phase SPWM",
     page_icon="🎚",
-    layout="wide",
     initial_sidebar_state="expanded",
 )
 
