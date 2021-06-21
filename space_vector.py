@@ -198,7 +198,7 @@ elif sf == '2/3':
 else:
   scaling = np.sqrt(2/3)
 
-sin_ab= ABC2ab([sinA,sinB,sinC],1)
+sin_ab= ABC2ab([sinA,sinB,sinC],scaling)
 ab = ABC2ab(abc,scaling)  ### ABC to alpha beta Tranformation 
 ab_plot = plt.figure(figsize=[10,4])
 ax = ab_plot.add_subplot(111)
