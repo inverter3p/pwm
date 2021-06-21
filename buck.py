@@ -134,19 +134,19 @@ if mode:
     st.info('** In steady state, use averaging approach **')
     col1,col2 = st.beta_columns(2)
     with col1:
-        st.info('Volt-second balance of inductance voltage')
+        st.write('### Volt-second balance of inductance voltage')
         st.latex('(V_{in}-V_{out})T_{ON} + (-V_{out}T_{OFF}) = 0')
         st.latex('\dfrac{V_{out}}{V_{in}} = \dfrac{T_{ON}}{T_{ON}+T_{OFF}} = D')
 
     with col2:
-        st.info('Average value of inductance current')
+        st.write('** Average value of **'.''$I_{L}$)
         iltext = 'I_{L,avg} = I_{out}=\:'+str(iout) +'\:A'
         st.latex(iltext)
         iripple = max(iL) - min(iL)
         irippletext = '\Delta I_{L} = \:' + str(round(iripple,2)) +'A'
         st.latex(irippletext) 
         ripplefactor = iripple/iout
-        ripfactext = '\\text{Ripple factor} = \dfrac{\Delta I_{L}}{I_{out}}=\:'+str(round(ripplefactor,2))
+        ripfactext = '\\text{Ripple factor} = \dfrac{\Delta I_{L}}{I_{L,avg}}=\:'+str(round(ripplefactor,2))
         st.latex(ripfactext)
 else:
     st.error('Revise parameters for continuouse conduction mode')
