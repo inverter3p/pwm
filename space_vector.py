@@ -93,8 +93,8 @@ pii = np.pi
 wt = np.linspace(0,2*pii,step)
 # Vec_A = ampA*np.sin(wt)
 Vec_A = calVec('A',ampA,wt)
-Vec_B = ampB*np.sin(wt + 2*pii/3)
-Vec_C = ampC*np.sin(wt -2*pii/3)
+Vec_B = calVec('B',ampB,wt)
+Vec_C = calVec('C',ampC,wt)
 
 a = 'A(t) = '+ str(ampA)+'\sin(\omega t)'
 b = 'B(t) = '+ str(ampB)+'\sin(\omega t + 2\pi/3)'
