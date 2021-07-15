@@ -60,6 +60,14 @@ def ABC2ab(abc,scaling):
   beta = scaling*(abc[0]*0+abc[1]*0.866-abc[2]*0.866)
   return [alpha,beta]
 
+def calVec(ph,amp,wt):
+  if ph =='A':
+    return amp*np.sin(wt)
+  if ph =='B':
+    return amp*np.sin(wt+ 2*pii/3)
+  if ph =='C':
+    return amp*np.sin(wt- 2*pii/3)
+  
 ##########################๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒๒#######################
 #############                                  ####################################
 ###################################################################################
@@ -83,7 +91,8 @@ amp = max(ampA,ampB,ampC)
 step = 13
 pii = np.pi
 wt = np.linspace(0,2*pii,step)
-Vec_A = ampA*np.sin(wt)
+# Vec_A = ampA*np.sin(wt)
+Vec_A = calVec('A',ampA,wt)
 Vec_B = ampB*np.sin(wt + 2*pii/3)
 Vec_C = ampC*np.sin(wt -2*pii/3)
 
