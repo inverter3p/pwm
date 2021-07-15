@@ -70,7 +70,8 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-i = st.sidebar.slider('Step',0,12,step=1) 
+st.info('## ABC Reference Frame')
+i = st.slider('Step',0,12,step=1) 
 st.sidebar.info('** Set amplitude**')
  
 
@@ -166,7 +167,7 @@ plt.title('Sum of Space Vector ABC')
 #############################################3
 
 
-st.info('## ABC Reference Frame')
+
 st.write(abc_plot)
 col1,col2,col3 = st.beta_columns(3)
 vec_a = '\\vec{A} = '+ str(round(np.sin(arrow_loc)*ampA,3))+'\\angle{0^\circ}'
