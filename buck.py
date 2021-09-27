@@ -32,7 +32,7 @@ lbk = st.sidebar.slider('Inductance (mH)',0.05,2.0,step=0.05)
 votext = str(vout)
 
 st.info('**Parameters for Vout = '+str(vout)+'V **')
-col1,col2,col3,col4 = st.beta_columns(4)
+col1,col2,col3,col4 = st.columns(4)
 vint = 'V_{in} = ' + str(vin) +'\:\\text{V}'
 col1.latex(vint)
 dutyt = '\\text{M} = '+ str(round(duty,2))
@@ -75,7 +75,7 @@ plt.yticks([0,0.5,1.00])
 
 st.pyplot(plotduty)
 
-col1,col2 = st.beta_columns(2)
+col1,col2 = st.columns(2)
 Ton = duty/fsw
 ton = 'T_{ON} = \:'+str(round(Ton,3))+'\:\\text{ms}'
 col1.latex(ton)
@@ -85,7 +85,7 @@ col2.latex(toff)
 textduty = '\\text{Duty Cycle} \:D = \dfrac{T_{ON}}{T_{ON}+T_{OFF}} = \:' + str(round(duty,2))
 st.latex(textduty)
 
-col1,col2 = st.beta_columns(2)
+col1,col2 = st.columns(2)
 with col1:
     st.info('** When S is ON **')
     st.image(bckon)
@@ -139,7 +139,7 @@ st.write(ilplot)
 
 if mode:
     st.info('** In steady state, use averaging approach **')
-    col1,col2 = st.beta_columns(2)
+    col1,col2 = st.columns(2)
     with col1:
         st.write('** Volt-second balance of inductance voltage **')
         st.latex('(V_{in}-V_{out})T_{ON} + (-V_{out}T_{OFF}) = 0')
