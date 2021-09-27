@@ -178,7 +178,7 @@ plt.title('Sum of Space Vector ABC')
 
 
 st.write(abc_plot)
-col1,col2,col3 = st.beta_columns(3)
+col1,col2,col3 = st.columns(3)
 vec_a = '\\vec{A} = '+ str(round(np.sin(arrow_loc)*ampA,3))+'\\angle{0^\circ}'
 vec_b = '\\vec{B} = '+ str(round(np.sin(arrow_loc+2*pii/3)*ampB,3))+'\\angle{120^\circ}'
 vec_c = '\\vec{C} = '+ str(round(np.sin(arrow_loc-2*pii/3)*ampC,3))+'\\angle{240^\circ}'
@@ -186,7 +186,7 @@ col1.latex(vec_a)
 col2.latex(vec_b)
 col3.latex(vec_c)
 
-with st.beta_expander('See ABC  Space Vector'):
+with st.expander('See ABC  Space Vector'):
     st.write(fig)
 # fname="Vector_abc_step"+str(i)+".png"
 # plt.savefig(fname)
@@ -196,7 +196,7 @@ with st.beta_expander('See ABC  Space Vector'):
 #########  Plot alpha beta Vectors  #############
 #################################################
 st.info('## Alpha Beta Reference Frame')
-with st.beta_expander('Clarke\'s Transformation'):
+with st.expander('Clarke\'s Transformation'):
     st.latex('\\begin{bmatrix} F_{\\alpha} \\\ F_{\\beta} \\\ F_{0} \end{bmatrix} = \
     C\\begin{bmatrix} 1 & -\\frac{1}{2} & -\\frac{1}{2} \\\ 0 & \\frac{\sqrt{3}}{2} & -\\frac{\sqrt{3}}{2} \\\ \
     \\frac{1}{2} & \\frac{1}{2} & \\frac{1}{2}    \end{bmatrix} \\begin{bmatrix} F_{A} \\\ F_{B} \\\ F_{C} \end{bmatrix}  ')
@@ -273,13 +273,13 @@ st.sidebar.info('** Clarke Transformation **')
 st.sidebar.write('Scaling = ',sf)
 st.sidebar.latex(alpha)
 st.sidebar.latex(beta)
-col1,col2,col3 = st.beta_columns([10,1,10])
+col1,col2,col3 = st.columns([10,1,10])
 col1.latex(alpha)
 col3.latex(beta)
 col1.latex(vec_alpha)
 col3.latex(vec_beta)
 
-with st.beta_expander('See alpha beta  Vector'):
+with st.expander('See alpha beta  Vector'):
     st.write(fig)
     
 
