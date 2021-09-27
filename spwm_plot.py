@@ -23,7 +23,7 @@ else:
 st.info('** 1. Set modulation parameters**')
 st.sidebar.info('** 1. Set modulation parameters**')
 
-col1,col3 = st.beta_columns([1,1])
+col1,col3 = st.columns([1,1])
 with col1:
     x = st.sidebar.slider('Modulation Index',0.0,1.25,1.0)
     st.write("$$M_a =$$  ",str(x))
@@ -107,7 +107,7 @@ if pwm != 'SPWM':
     plt.text(0.54,1.1,'c+3rd',color='k')
     # plt.title('Modulation Signal')
 
-col1,col2 = st.beta_columns([6,2])
+col1,col2 = st.columns([6,2])
 
 if pwm == 'SPWM':
     with col1:
@@ -134,14 +134,14 @@ else:
 st.info('** 2. Set DC link voltage (VDC)**')
 st.sidebar.info('** 2. Set DC link voltage (VDC)**')
 
-col1,col2 = st.beta_columns([1,1])
+col1,col2 = st.columns([1,1])
 Vdc = st.sidebar.slider('Vdc',100,600,300)
 sVdc = "V_{DC} = \:" + str(Vdc) +'\: V'
 col1.latex(sVdc)
 
 st.info('**3. Obtain PWM Voltage Patterns**')
 st.write('**Phase-leg Voltage**')
-col4,col5 = st.beta_columns([6,2])
+col4,col5 = st.columns([6,2])
 
 pwm_A = (sine_A+sine_3A>=tri_FB)*1
 VA = pwm_A*Vdc
@@ -164,7 +164,7 @@ else:
 # ao = "V_{A0,pk}="+'{0:.2f}'.format(max(Vsin_A))+"\: V"
 # col5.latex(ao)
 
-col4,col5 = st.beta_columns([6,2])
+col4,col5 = st.columns([6,2])
 pwm_B = (sine_B+sine_3A>=tri_FB)*1
 VB = pwm_B*Vdc
 Vsin_B = (sine_B+sine_3A+1)*0.5*Vdc
@@ -185,7 +185,7 @@ else:
 # bo = "V_{B0,pk}="+'{0:.2f}'.format(max(Vsin_B))+"\: V"
 # col5.latex(bo)
 
-col4,col5 = st.beta_columns([6,2])
+col4,col5 = st.columns([6,2])
 pwm_C = (sine_C+sine_3A>=tri_FB)*1
 VC = pwm_C*Vdc
 Vsin_C = (sine_C+sine_3A+1)*0.5*Vdc
@@ -212,7 +212,7 @@ VBC = VB - VC
 VCA = VC -VA
 
 
-col5,col6 = st.beta_columns([6,2])
+col5,col6 = st.columns([6,2])
 with col5:
     plotVab = plt.figure(figsize=[7,3])
     plt.plot(time,VAB,'gray')
@@ -230,7 +230,7 @@ with col6:
     ab = "V_{AB,1}="+'{0:.2f}'.format(max(Vsin_A-Vsin_B))+"\: V"
     st.latex(ab)
 
-col5,col6 = st.beta_columns([6,2])
+col5,col6 = st.columns([6,2])
 with col5:
     plotVbc = plt.figure(figsize=[7,3])
     plt.plot(time,VBC,'gray')
@@ -249,7 +249,7 @@ with col6:
     bc = "V_{BC,1}="+'{0:.2f}'.format(max(Vsin_B-Vsin_C))+"\: V"
     st.latex(bc)
 
-col5,col6 = st.beta_columns([6,2])
+col5,col6 = st.columns([6,2])
 with col5:
     plotVca = plt.figure(figsize=[7,3])
     plt.plot(time,VCA,'gray')
@@ -296,7 +296,7 @@ fft_cal = st.sidebar.button('FFT Calculation')
 
 if fft_cal:
     st.info('** Fundamental Voltage from FFT Spectrum **')
-    col1,col2 = st.beta_columns([6,2])
+    col1,col2 = st.columns([6,2])
     plotfft = plt.figure(figsize=[7,3])
     plt.bar(xf, yf_abs,width=1)
     plt.axis([0,200,-0.2,1.25*Vdc])
