@@ -18,7 +18,7 @@ def thd(abs_data):
     return thd
 
 st.sidebar.info('** 1. Set modulation parameters**')
-x = st.sidebar.slider('Modulation Index',0.0,1.25,1.0)
+x = st.sidebar.slider('Modulation Index',0.0,3.5,1.0)
 fcarrier = st.sidebar.slider('Frequency Modulation Index',10,50,15)
 
 pii = np.pi
