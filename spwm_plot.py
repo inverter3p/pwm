@@ -54,7 +54,7 @@ with col1:
     st.write("$$M_a =$$  ",str(x))
     st.write("$$F_c =$$  ",str(fcarrier))
     st.sidebar.info('** 2. Set DC link voltage (VDC)**')
-    Vdc = st.sidebar.slider('Vdc',100,600,300)
+    Vdc = st.sidebar.slider('Vdc',100,600,100)
     sVdc = "$$V_{DC} = \:$$" + str(Vdc) +'$$\: V$$'
     st.write(sVdc)
 
