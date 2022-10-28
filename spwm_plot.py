@@ -315,7 +315,7 @@ else:
             st.latex(''' V_{AB,1}= M_a V_{dc}\dfrac{\sqrt{3}}{2}\sin(\omega t-\dfrac{\pi}{6})''')
         else:
             st.latex(''' V_{AB,1}= M_a V_{dc}h_{1}\dfrac{\sqrt{3}}{2}\sin(\omega t-\dfrac{\pi}{6})''')
-        ab = "V_{AB,1}="+'{0:.2f}'.format(max(Vsin_A-Vsin_B))+"\: V"
+        ab = "\hat{V}_{AB,1}="+'{0:.2f}'.format(max(Vsin_A-Vsin_B))+"\: V"
         ab_rms = "V_{AB,1,rms}="+'{0:.2f}'.format(max(Vsin_A-Vsin_B)/np.sqrt(2))+"\: V"
         st.latex(ab)
         st.latex(ab_rms)
@@ -339,7 +339,7 @@ else:
             else:
                 st.latex(''' V_{BC,1}= M_a V_{dc}h_{1}\dfrac{\sqrt{3}}{2}\sin(\omega t-\dfrac{\pi}{6} + \dfrac{2\pi}{3} )''')
             
-            bc = "V_{BC,1}="+'{0:.2f}'.format(max(Vsin_B-Vsin_C))+"\: V"
+            bc = "\hat{V}_{BC,1}="+'{0:.2f}'.format(max(Vsin_B-Vsin_C))+"\: V"
             bc_rms = "V_{AB,1,rms}="+'{0:.2f}'.format(max(Vsin_B-Vsin_C)/np.sqrt(2))+"\: V"
             st.latex(bc)
             st.latex(bc_rms)
@@ -360,7 +360,7 @@ else:
             else: 
                 st.latex(''' V_{CA,1}= M_a V_{dc}h_{1}\dfrac{\sqrt{3}}{2}\sin(\omega t-\dfrac{\pi}{6}-\dfrac{2\pi}{3})''')
 
-            ca = "V_{CA,1}="+'{0:.2f}'.format(max(Vsin_C-Vsin_A))+"\: V"
+            ca = "\hat{V}_{CA,1}="+'{0:.2f}'.format(max(Vsin_C-Vsin_A))+"\: V"
             ca_rms = "V_{AB,1,rms}="+'{0:.2f}'.format(max(Vsin_C-Vsin_A)/np.sqrt(2))+"\: V"
             st.latex(ca)
             st.latex(ca_rms)
@@ -393,8 +393,8 @@ else:
         col1.write(plotfft)
 
         yf_abs100 = yf_abs[:100]
-        v1 = 'V_{L-L,1} = ' + str(format((yf_abs[1]),'.2f'))+' \:V'
-        vrms = 'V_{L-L,1,rms}= \dfrac{V_{L-L,pk}}{\sqrt{2}} = ' + str(format((yf_abs[1])/np.sqrt(2),'.2f'))+'\:V'
+        v1 = '\hat{V}_{L-L,1} = ' + str(format((yf_abs[1]),'.2f'))+' \:V'
+        vrms = 'V_{L-L,1,rms}= \dfrac{\hat{V}_{L-L,1}}{\sqrt{2}} = ' + str(format((yf_abs[1])/np.sqrt(2),'.2f'))+'\:V'
         thdv = ('THD_V = '+ str(format(thd(yf_abs100),'.2f'))+'\: \%')
         if pwm == '3P SPWM':
             v1 = 'V_{L-L,pk} = M_{a}V_{DC}\dfrac{\sqrt{3}}{2} =\:' + str(format(max(yf_abs),'.2f'))+' \:V'
