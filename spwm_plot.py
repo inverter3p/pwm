@@ -397,10 +397,10 @@ else:
         vrms = 'V_{L-L,1,rms}= \dfrac{\hat{V}_{L-L,1}}{\sqrt{2}} = ' + str(format((yf_abs[1])/np.sqrt(2),'.2f'))+'\:V'
         thdv = ('THD_V = '+ str(format(thd(yf_abs100),'.2f'))+'\: \%')
         if pwm == '3P SPWM':
-            v1 = 'V_{L-L,pk} = M_{a}V_{DC}\dfrac{\sqrt{3}}{2} =\:' + str(format(max(yf_abs),'.2f'))+' \:V'
+            v1 = '\hat{V}_{L-L,1} = M_{a}V_{DC}\dfrac{\sqrt{3}}{2} =\:' + str(format(max(yf_abs),'.2f'))+' \:V'
             # col2.latex('''V_{L-L,pk} = M_{a}V_{DC}\dfrac{\sqrt{3}}{2}''')
         elif pwm == '3P SPWM':
-            v1 = 'V_{L-L,pk} = M_{a}h_{1}V_{DC}\dfrac{\sqrt{3}}{2} =\:' + str(format(max(yf_abs),'.2f'))+' \:V'
+            v1 = '\hat{V}_{L-L,1} = M_{a}h_{1}V_{DC}\dfrac{\sqrt{3}}{2} =\:' + str(format(max(yf_abs),'.2f'))+' \:V'
         col2.latex(v1)
         # col2.latex('V_{L-L,rms}= \dfrac{V_{L-L,pk}}{\sqrt{2}}')
         col2.latex(vrms)
