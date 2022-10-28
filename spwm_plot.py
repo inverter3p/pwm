@@ -405,5 +405,5 @@ else:
         # col2.latex('V_{L-L,rms}= \dfrac{V_{L-L,pk}}{\sqrt{2}}')
         col2.latex(vrms)
         col2.latex(thdv)
-        col2.write('(Calculate upto 100th harmonic)')
+        col2.write('(Calculate upto 200th harmonic)')
         st.sidebar.write('## Done')
