@@ -19,7 +19,7 @@ def thd(abs_data):
 
 st.sidebar.info('** 1. Set modulation parameters**')
 x = st.sidebar.slider('Modulation Index',0.0,3.5,1.0)
-fcarrier = st.sidebar.slider('Frequency Modulation Index',10,50,15)
+fcarrier = st.sidebar.slider('Frequency Modulation Index',1,50,20)
 
 pii = np.pi
 sample_rate = 4000
