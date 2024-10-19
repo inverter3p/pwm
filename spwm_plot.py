@@ -107,6 +107,7 @@ if pwm == '3P HI-SPWM':
     plt.text(0.57,1.05,'c',color='k')
 
 
+st.pyplot(plotpwm)
 
 if pwm == '3P HI-SPWM':
     plotpwm3rd = plt.figure(figsize=[7,3])
@@ -120,13 +121,13 @@ if pwm == '3P HI-SPWM':
     plt.text(0.22,1.1,'a+3rd',color='r')
     plt.text(0.89,1.1,'b+3rd',color='b')
     plt.text(0.54,1.1,'c+3rd',color='k')
-    # plt.title('Modulation Signal')
+    st.pyplot(plotpwm3rd)
 
 col1,col2 = st.columns([6,2])
 
 if pwm != '3P HI-SPWM':
     with col1:
-        st.write(plotpwm)
+        st.pyplot(plotpwm)
         
     with col2:
         st.write('**Modulation Signals**')
