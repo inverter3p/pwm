@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import signal
 from scipy.fft import fft, fftfreq, rfft, rfftfreq, irfft, dst
-from scipy.signal import blackman
+#from scipy.signal import blackman
 
 def thd(abs_data):
     sq_sum = 0.0
